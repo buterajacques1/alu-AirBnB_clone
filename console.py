@@ -1,23 +1,24 @@
 import cmd
 
 
-# Derive a class HBNBCommand from cmd.Cmd
 class HBNBCommand(cmd.Cmd):
-    # Define the prompt string
+    """
+    Class that implements the command interpreter for the HBNB project.
+    """
     prompt = '(hbnb) '
 
-    # Define the quit method to exit the program
     def do_quit(self, line):
-        """Quit the program with a helpful message."""
+        """Quit command to exit the program"""
         return True
 
-    # Define the EOF method to exit the program on End Of File
     def do_EOF(self, line):
-        """Exit the program when the end of file is reached."""
+        """Exit on End Of File (EOF)"""
         return True
 
+    def emptyline(self):
+        """Do nothing on an empty line + ENTER"""
+        pass
 
-# If this file is run as a standalone program
+
 if __name__ == '__main__':
-    # Start the command interpreter
     HBNBCommand().cmdloop()
